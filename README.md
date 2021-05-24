@@ -1,4 +1,4 @@
-# Esim [![GoDoc](http://godoc.org/github.com/unrolled/render?status.svg)](http://godoc.org/github.com/unrolled/render) [![Test](https://github.com/unrolled/render/workflows/Test/badge.svg?branch=v1)](https://github.com/unrolled/render/actions)
+# Esim
 
 
 This Go eSIM module processes eUICC IDentifier (EID) used in the context of Remote Provisioning
