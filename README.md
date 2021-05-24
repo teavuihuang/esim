@@ -1,4 +1,4 @@
-# Esim
+# Esim [![Go Reference](https://pkg.go.dev/badge/github.com/teavuihuang/esim.svg)](https://pkg.go.dev/github.com/teavuihuang/esim)
 
 
 This Go eSIM module processes eUICC IDentifier (EID) used in the context of Remote Provisioning
