@@ -11,14 +11,14 @@ the international telecommunication charge card) based scheme. See [GSMA eSIM sp
 ## Decoded EID Data
 ~~~ go
 type EidData struct {
-	eidIndustryIdentifier             string
-	eidCountryCode                    string
-	eidIssuerIdentifier               string
-	eidPlatformAndOsVersions          string
-	eidAdditionalIssuerInfo           string
-	eidIndividualIdentificationNumber string
-	eidCheckDigits                    string
-	eidVerificationSuccessful         bool
+	EidIndustryIdentifier             string
+	EidCountryCode                    string
+	EidIssuerIdentifier               string
+	EidPlatformAndOsVersions          string
+	EidAdditionalIssuerInfo           string
+	EidIndividualIdentificationNumber string
+	EidCheckDigits                    string
+	EidVerificationSuccessful         bool
 }
 ~~~
 
