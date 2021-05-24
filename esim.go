@@ -13,14 +13,14 @@ func isNumeric(str string) bool {
 }
 
 type EidData struct {
-	eidIndustryIdentifier             string
-	eidCountryCode                    string
-	eidIssuerIdentifier               string
-	eidPlatformAndOsVersions          string
-	eidAdditionalIssuerInfo           string
-	eidIndividualIdentificationNumber string
-	eidCheckDigits                    string
-	eidVerificationSuccessful         bool
+	EidIndustryIdentifier             string
+	EidCountryCode                    string
+	EidIssuerIdentifier               string
+	EidPlatformAndOsVersions          string
+	EidAdditionalIssuerInfo           string
+	EidIndividualIdentificationNumber string
+	EidCheckDigits                    string
+	EidVerificationSuccessful         bool
 }
 
 /*
@@ -57,25 +57,25 @@ func DecodeAndVerifyEid(eid string) (EidData, error) {
 	eid_cd2 := 98 - bigMm.Uint64()
 
 	eid_decoded := EidData{
-		eidIndustryIdentifier:             eid[:2],
-		eidCountryCode:                    eid[2:5],
-		eidIssuerIdentifier:               eid[5:8],
-		eidPlatformAndOsVersions:          eid[8:13],
-		eidAdditionalIssuerInfo:           eid[13:18],
-		eidIndividualIdentificationNumber: eid[18:30],
-		eidCheckDigits:                    eid[30:32],
-		eidVerificationSuccessful:         uint64(eid_cd1) == eid_cd2,
+		EidIndustryIdentifier:             eid[:2],
+		EidCountryCode:                    eid[2:5],
+		EidIssuerIdentifier:               eid[5:8],
+		EidPlatformAndOsVersions:          eid[8:13],
+		EidAdditionalIssuerInfo:           eid[13:18],
+		EidIndividualIdentificationNumber: eid[18:30],
+		EidCheckDigits:                    eid[30:32],
+		EidVerificationSuccessful:         uint64(eid_cd1) == eid_cd2,
 	}
 	return eid_decoded, nil
 }
 
 func ShowEidData(eidData EidData) {
-	fmt.Println("eidIndustryIdentifier              ", eidData.eidIndustryIdentifier)
-	fmt.Println("eidCountryCode                     ", eidData.eidCountryCode)
-	fmt.Println("eidIssuerIdentifier                ", eidData.eidIssuerIdentifier)
-	fmt.Println("eidPlatformAndOsVersions           ", eidData.eidPlatformAndOsVersions)
-	fmt.Println("eidAdditionalIssuerInfo            ", eidData.eidAdditionalIssuerInfo)
-	fmt.Println("eidIndividualIdentificationNumber  ", eidData.eidIndividualIdentificationNumber)
-	fmt.Println("eidCheckDigits                     ", eidData.eidCheckDigits)
-	fmt.Println("eidVerificationSuccessful          ", eidData.eidVerificationSuccessful)
+	fmt.Println("EidIndustryIdentifier              ", eidData.EidIndustryIdentifier)
+	fmt.Println("EidCountryCode                     ", eidData.EidCountryCode)
+	fmt.Println("EidIssuerIdentifier                ", eidData.EidIssuerIdentifier)
+	fmt.Println("EidPlatformAndOsVersions           ", eidData.EidPlatformAndOsVersions)
+	fmt.Println("EidAdditionalIssuerInfo            ", eidData.EidAdditionalIssuerInfo)
+	fmt.Println("EidIndividualIdentificationNumber  ", eidData.EidIndividualIdentificationNumber)
+	fmt.Println("EidCheckDigits                     ", eidData.EidCheckDigits)
+	fmt.Println("EidVerificationSuccessful          ", eidData.EidVerificationSuccessful)
 }

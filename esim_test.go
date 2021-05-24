@@ -12,8 +12,8 @@ Examples of valid EIDs are:
 */
 
 func TestEidOk1(t *testing.T) {
-	_, err := DecodeAndVerifyEid("89001012012341234012345678901224")
-	if err != nil {
+	eidData, err := DecodeAndVerifyEid("89001012012341234012345678901224")
+	if (err != nil) || (eidData.EidIndustryIdentifier != "89") {
 		t.Fatalf(`Error: %v`, err)
 	}
 }
