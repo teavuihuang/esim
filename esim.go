@@ -7,11 +7,17 @@ import (
 	"strconv"
 )
 
+/*
+Internal function to check if a string is numeric
+*/
 func isNumeric(str string) bool {
 	_, err := strconv.ParseFloat(str, 64)
 	return err == nil
 }
 
+/*
+The struct containing the output from DecodeAndVerifyEid()
+*/
 type EidData struct {
 	EidIndustryIdentifier             string
 	EidCountryCode                    string
@@ -24,7 +30,7 @@ type EidData struct {
 }
 
 /*
-This eSIM module processes eUICC IDentifier (EID) used in the context of Remote Provisioning
+Decode and verify the eUICC IDentifier (EID) used in the context of Remote Provisioning
 and Management of the eUICC (eSIM) in according to GSM Association Official Document
 SGP.02 (Remote Provisioning of Embedded UICC Technical Specification) and SGP.22
 (RSP Technical Specification) for EID using the ITU-T E.118 (ITU-T Recommendation E.118,
@@ -69,6 +75,9 @@ func DecodeAndVerifyEid(eid string) (EidData, error) {
 	return eid_decoded, nil
 }
 
+/*
+Display the EidData on the console
+*/
 func ShowEidData(eidData EidData) {
 	fmt.Println("EidIndustryIdentifier              ", eidData.EidIndustryIdentifier)
 	fmt.Println("EidCountryCode                     ", eidData.EidCountryCode)
